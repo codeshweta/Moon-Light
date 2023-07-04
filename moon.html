@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<style>
+
+    body{
+        background-color: skyblue;
+        overflow: hidden;
+        animation: dayToNight 10s linear infinite;
+    }
+
+   
+   .content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+   }
+
+   .sun{
+    height: 150px;
+    width: 150px;
+    border-radius:50%;
+    background-color: #fcd25b;
+    border: 3 px solid  #ffbb3c;
+    box-shadow: 0 0 5rem 0 #fcd25b,
+    inset 0 0 5rem 1rem #ffbb3c,
+    inset 0 0 2rem 2rem #fdab11
+   }
+
+   .shadow{
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    background-color: black;
+    box-shadow: 0 0 5rem 2rem black;
+    top: -5px;
+    left: 0px;
+    animation:moveshadow 10s linear infinite ;
+   }
+
+   h1{
+    color: white;
+    text-shadow: 0 0 12px red, 0 0 100px red; 
+    display: flex;
+    margin-top: 45px;
+    justify-content: center;
+    align-items: center;
+   }
+
+   @keyframes moveshadow{
+    0%{
+        transform: translateX(150px);
+    }
+
+    50%{
+        transform: translateX(-10px);
+    }
+
+    100%{
+        transform: translateX(-170px);
+    }
+   }
+
+   @keyframes dayToNight {
+    0%{
+        background-color:skyblue;
+    }
+    50%{
+        background-color:black;
+    }
+    100%{
+        background-color: skyblue;
+    }
+   }
+</style>
+<body>
+
+    <h1>Moon Light</h1>
+    <div class="content">
+        <div class="sun">
+            <div class="shadow"></div>
+        </div>
+    </div>
+    
+</body>
+</html>
